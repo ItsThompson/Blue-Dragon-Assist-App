@@ -9,6 +9,7 @@ import HumanTrafficking from "./screens/humantrafficking";
 import StayingSafe from "./screens/stayingsafe";
 import FindingHelp from "./screens/findinghelp";
 import Main from "./screens/main";
+import Test from "./screens/test";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Main" component={Main} />
+            <Stack.Screen name="Test" component={Test} />
             <Stack.Screen name="Information" component={Information} />
             <Stack.Screen name="Contact" component={Contact} />
             <Stack.Screen name="Languages" component={Languages} />

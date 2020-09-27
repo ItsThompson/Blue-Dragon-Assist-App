@@ -29,6 +29,12 @@ export default function App() {
             </View>
             <View style={styles.button}>
                 <Button
+                    title="Test"
+                    onPress={() => navigation.navigate("Test")}
+                ></Button>
+            </View>
+            <View style={styles.button}>
+                <Button
                     title="Information"
                     onPress={() => navigation.navigate("Languages")}
                 ></Button>

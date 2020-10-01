@@ -1,38 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Text, View } from "react-native";
+import React from "react";
+import axios from "axios";
+import { View, Text} from "react-native";
 
 // https://reactnative.dev/docs/network
-export default App = () => {
-    const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
+export default class Test extends React.Component {
+    
+    state={
+        data:[]
+    }
 
-    // axios.get()
-    useEffect(() => {
-        fetch(
-            "http://blue-dragon-app-database.herokuapp.com/homepage/english"
+    componentDidMount(){
+        axios.get(`http://blue-dragon-app-database.herokuapp.com/homepage/english`)
+        .then(res => {
+            const data = res.data;
+            this.setState({ data });
+        })
+        .catch(function(error){
+            console.error(error)
+        });
+    }
+
+    render(){
+        return(
+            <View>
+                {this.state.data.map(i => 
+                <Text key = {i.id}>
+                    {i.title}
+                </Text>
+                )}
+                {this.state.data.map(i => 
+                <Text key = {i.id}>
+                    {i.body}
+                </Text>
+                )}
+            </View>
         )
-            .then((response) => response.json())
-            .then((json) => setData(json.credits))
-            .catch((error) => console.error(error))
-            .finally(() => setLoading(false));
-    }, []);
-
-    return (
-        <View style={{ flex: 1, padding: 24 }}>
-            {isLoading ? (
-                <ActivityIndicator />
-            ) : (
-                // https://reactnative.dev/docs/flatlist.html
-                <FlatList
-                    data={ data }
-                    keyExtractor={({ id }) => id}
-                    renderItem={({ item }) => (
-                        <Text>
-                            {item.name}, {item.role}
-                        </Text>
-                    )}
-                />
-            )}
-        </View>
-    );
+    }
 };

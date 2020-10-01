@@ -6,9 +6,10 @@ export default App = () => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
+    // axios.get()
     useEffect(() => {
         fetch(
-            "https://raw.githubusercontent.com/ItsThompson/Blue-Dragon-App-Database/master/test.json"
+            "http://blue-dragon-app-database.herokuapp.com/homepage/english"
         )
             .then((response) => response.json())
             .then((json) => setData(json.credits))
@@ -23,7 +24,7 @@ export default App = () => {
             ) : (
                 // https://reactnative.dev/docs/flatlist.html
                 <FlatList
-                    data={data}
+                    data={ data }
                     keyExtractor={({ id }) => id}
                     renderItem={({ item }) => (
                         <Text>

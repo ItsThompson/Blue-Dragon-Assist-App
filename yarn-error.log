@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js add ex[p
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js add react-native-maps -E
 
 PATH: 
-  /Users/thompson/.rvm/gems/ruby-2.6.5/bin:/Users/thompson/.rvm/gems/ruby-2.6.5@global/bin:/Users/thompson/.rvm/rubies/ruby-2.6.5/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/thompson/.rvm/gems/ruby-2.6.5/bin:/Users/thompson/.rvm/gems/ruby-2.6.5@global/bin:/Users/thompson/.rvm/rubies/ruby-2.6.5/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/thompson/.rvm/bin
+  /Users/thompson/.rvm/gems/ruby-2.6.5/bin:/Users/thompson/.rvm/gems/ruby-2.6.5@global/bin:/Users/thompson/.rvm/rubies/ruby-2.6.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/thompson/.rvm/gems/ruby-2.6.5/bin:/Users/thompson/.rvm/gems/ruby-2.6.5@global/bin:/Users/thompson/.rvm/rubies/ruby-2.6.5/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/thompson/.rvm/bin
 
 Yarn version: 
   1.22.5
@@ -14,52 +14,42 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/ex[p: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.5/libexec/lib/cli.js:66988:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.22.5/libexec/lib/cli.js:140749:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.5/libexec/lib/cli.js:141721:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.5/libexec/lib/cli.js:141643:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1220:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: EACCES: permission denied, unlink '/Users/thompson/Documents/Personal/Coding/Programming/Coding For Good/BlueDragon/Blue-Dragon-Assist-App/node_modules/.bin/atob'
 
 npm manifest: 
   {
-    "main": "node_modules/expo/AppEntry.js",
-    "scripts": {
-      "start": "expo start",
-      "android": "expo start --android",
-      "ios": "expo start --ios",
-      "web": "expo start --web",
-      "eject": "expo eject"
-    },
-    "dependencies": {
-      "@react-native-community/masked-view": "^0.1.10",
-      "@react-navigation/native": "^5.7.3",
-      "@react-navigation/stack": "^5.9.0",
-      "expo": "^39.0.3",
-      "expo-status-bar": "^1.0.2",
-      "react": "~16.11.0",
-      "react-dom": "~16.11.0",
-      "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-      "react-native-elements": "^2.3.2",
-      "react-native-gesture-handler": "~1.6.0",
-      "react-native-reanimated": "~1.9.0",
-      "react-native-safe-area-context": "~3.0.7",
-      "react-native-screens": "~2.9.0",
-      "react-native-super-grid": "^4.0.3",
-      "react-native-unordered-list": "^1.0.4",
-      "react-native-web": "~0.11.7",
-      "react-navigation-stack": "^2.8.2"
-    },
-    "devDependencies": {
-      "@babel/core": "^7.8.6",
-      "babel-preset-expo": "~8.1.0"
-    },
-    "private": true
+      "main": "node_modules/expo/AppEntry.js",
+      "scripts": {
+          "start": "expo start",
+          "android": "expo start --android",
+          "ios": "expo start --ios",
+          "web": "expo start --web",
+          "eject": "expo eject"
+      },
+      "dependencies": {
+          "@react-native-community/masked-view": "^0.1.10",
+          "@react-navigation/native": "^5.7.3",
+          "@react-navigation/stack": "^5.9.0",
+          "expo": "^38.0.2",
+          "expo-status-bar": "^1.0.2",
+          "react": "~16.11.0",
+          "react-dom": "~16.11.0",
+          "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+          "react-native-elements": "^2.3.2",
+          "react-native-gesture-handler": "~1.6.0",
+          "react-native-maps": "0.27.1",
+          "react-native-reanimated": "~1.9.0",
+          "react-native-screens": "~2.9.0",
+          "react-native-super-grid": "^4.0.3",
+          "react-native-unordered-list": "^1.0.4",
+          "react-native-web": "~0.11.7",
+          "react-navigation-stack": "^2.8.2"
+      },
+      "devDependencies": {
+          "@babel/core": "^7.8.6",
+          "babel-preset-expo": "~8.1.0"
+      },
+      "private": true
   }
 
 yarn manifest: 
@@ -1304,6 +1294,11 @@ Lockfile:
       strip-ansi "^5.2.0"
       sudo-prompt "^9.0.0"
       wcwidth "^1.0.1"
+  
+  "@react-native-community/masked-view@^0.1.10":
+    version "0.1.10"
+    resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
+    integrity sha512-rk4sWFsmtOw8oyx8SD3KSvawwaK7gRBSEIy2TAwURyGt+3TizssXP1r8nx3zY+R7v2vYYHXZ+k2/GULAT/bcaQ==
   
   "@react-navigation/core@^5.12.3":
     version "5.12.3"
@@ -4735,11 +4730,6 @@ Lockfile:
     version "3.1.4"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.4.tgz#9b7f883a5ae8da6218d17467a350434005893602"
     integrity sha512-bXx3hqz4LovFoMnJIRGIWL2oJ/PHadXviBKvgZV9yNErtURQLJSn0yfQytVtiqslhaBMZOJwH4R6HiClyofvBg==
-  
-  react-native-safe-area-context@~3.0.7:
-    version "3.0.7"
-    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.0.7.tgz#0f53de7a30d626d82936000f3f6db374ecc4b800"
-    integrity sha512-dqhRTlIFe5+P1yxitj0C9XVUxLqOmjomeqzUSSY8sNOWVjtIhEY/fl4ZKYpAVnktd8dt3zl13XmJTmRmy3d0uA==
   
   react-native-screens@~2.9.0:
     version "2.9.0"

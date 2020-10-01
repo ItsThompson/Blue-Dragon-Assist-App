@@ -16,21 +16,22 @@ export default function App() {
         "🇬🇧 English",
         "🇫🇷 French",
         "🇻🇳 Vietnamese",
-        "🏳️ Language",
-        "🏳️ Language",
-        "🏳️ Language",
+        // "🏳️ Language",
+        // "🏳️ Language",
+        // "🏳️ Language",
     ];
 
-    const ButtonPress = (item) => {
+    function ButtonPress(item) {
         switch(item){
             case languages[0]: {
                 // English
-                navigation.navigate("Main");
+                // navigation.navigate("Main");
+                navigation.navigate("Language");
                 break;
             }
             case languages[1]: {
                 // French
-                navigation.navigate("Main");
+                navigation.navigate("Contact");
                 break;
             }
             case languages[2]: {
@@ -39,7 +40,6 @@ export default function App() {
                 break;
             }
         }
-        navigation.navigate("Main");
     };
 
     return (

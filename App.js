@@ -10,6 +10,7 @@ import StayingSafe from "./screens/stayingsafe";
 import FindingHelp from "./screens/findinghelp";
 import Main from "./screens/main";
 import Test from "./screens/test";
+import Vietnamese from "./screens/vietnamese";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
             <Stack.Screen name="Information" component={Information} />
             <Stack.Screen name="Contact" component={Contact} />
             <Stack.Screen name="Languages" component={Languages} />
+            <Stack.Screen name="Vietnamese" component={Vietnamese} />
             <Stack.Screen
                 name="HumanTrafficking"
                 component={HumanTrafficking}

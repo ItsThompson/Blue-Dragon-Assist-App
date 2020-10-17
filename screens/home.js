@@ -13,10 +13,17 @@ import {
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
+<<<<<<< Updated upstream
 export default class Home extends React.Component {
     render(){
         return(
             <SafeAreaView style={styles.container}>
+=======
+export default function App() {
+    const navigation = useNavigation();
+    return (
+        <SafeAreaView style={styles.container}>
+>>>>>>> Stashed changes
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>Staying Safe</Text>
             </View>
@@ -46,9 +53,15 @@ export default class Home extends React.Component {
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
+<<<<<<< Updated upstream
         )
     }
 }
+=======
+    );
+}
+
+>>>>>>> Stashed changes
 const styles = StyleSheet.create({
     container: {
         flex: 1,

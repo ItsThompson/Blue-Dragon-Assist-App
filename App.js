@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from 'react';
 import * as firebase from 'firebase';
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,6 +13,22 @@ import FindingHelp from './screens/findinghelp';
 import Main from './screens/main';
 import Test from './screens/test';
 import Vietnamese from './screens/vietnamese';
+=======
+import React from "react";
+import * as firebase from 'firebase';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Home from "./screens/home";
+import Information from "./screens/information";
+import Languages from "./screens/langauges";
+import Contact from "./screens/contact";
+import HumanTrafficking from "./screens/humantrafficking";
+import StayingSafe from "./screens/stayingsafe";
+import FindingHelp from "./screens/findinghelp";
+import Main from "./screens/main";
+import Test from "./screens/test";
+import Vietnamese from "./screens/vietnamese";
+>>>>>>> Stashed changes
 
 const Stack = createStackNavigator();
 

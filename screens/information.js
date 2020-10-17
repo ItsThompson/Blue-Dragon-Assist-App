@@ -3,6 +3,7 @@ import { ScrollView, Text, StyleSheet } from "react-native";
 import UnorderedList from "react-native-unordered-list";
 import { Card, Divider } from "react-native-elements";
 
+<<<<<<< Updated upstream
 export default class Information extends React.Component {
     render() {
         return (
@@ -15,6 +16,63 @@ export default class Information extends React.Component {
                     <Card.Title style={styles.label}>
                         What is Human Trafficking
                     </Card.Title>
+=======
+export default function App() {
+    return (
+        <ScrollView style={styles.container}>
+            <Text style={styles.title}>Key Statistics</Text>
+            <Divider
+                style={{ height: 2, backgroundColor: "#61BB9B" }}
+            ></Divider>
+            <Card>
+                <Card.Title style={styles.label}>
+                    What is Human Trafficking
+                </Card.Title>
+                <Text style={styles.text}>
+                    Trafficking in persons is the act of recruiting,
+                    harboring, transporting, providing, or obtaining a
+                    person for compelled labor or commercial sex acts
+                    through the use of force, fraud or coercion.
+                </Text>
+                <Text style={styles.text}>
+                    {"\n"}An estimated{" "}
+                    <Text style={{ fontWeight: "bold" }}>
+                        40.3 million men
+                    </Text>
+                    , women and children are trapped in situations which
+                    they were coerced or deceived into and which they cannot
+                    leave.
+                </Text>
+            </Card>
+            <Card>
+                <Card.Title style={styles.label}>
+                    5 Most Common Trends of Human Trafficking in Vietnam{" "}
+                </Card.Title>
+                <UnorderedList>
+                    <Text style={styles.text}>
+                        Trafficked from Northern Vietnam into China for
+                        forced marriage, sexual exploitation, or labor
+                        exploitation.
+                    </Text>
+                </UnorderedList>
+                <Text>{"\n"}</Text>
+                <UnorderedList>
+                    <Text style={styles.text}>
+                        Trafficked from Southern Vietnam to Cambodia,
+                        Malaysia, Laos PDR, or Thailand for sexual
+                        exploitation.
+                    </Text>
+                </UnorderedList>
+                <Text>{"\n"}</Text>
+                <UnorderedList>
+                    <Text style={styles.text}>
+                        Lured into arranged marriages in Taiwan, South
+                        Korea, Singapore, and Malaysia.
+                    </Text>
+                </UnorderedList>
+                <Text>{"\n"}</Text>
+                <UnorderedList>
+>>>>>>> Stashed changes
                     <Text style={styles.text}>
                         Trafficking in persons is the act of recruiting,
                         harboring, transporting, providing, or obtaining a
@@ -30,6 +88,7 @@ export default class Information extends React.Component {
                         they were coerced or deceived into and which they cannot
                         leave.
                     </Text>
+<<<<<<< Updated upstream
                 </Card>
                 <Card>
                     <Card.Title style={styles.label}>
@@ -79,6 +138,13 @@ export default class Information extends React.Component {
     }
 }
 
+=======
+                </UnorderedList>
+            </Card>
+        </ScrollView>
+    );
+}
+>>>>>>> Stashed changes
 const styles = StyleSheet.create({
     container: {
         flex: 1,

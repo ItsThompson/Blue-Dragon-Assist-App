@@ -9,6 +9,18 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+<<<<<<< Updated upstream
+=======
+export default function App() {
+    const navigation = useNavigation();
+    function Redirect(value) {
+        navigation.navigate(value);
+    }
+    const onPressHumanTrafficking = () => Redirect("HumanTrafficking");
+    const onPressStayingSafe = () => Redirect("StayingSafe");
+    const onPressFindingHelp = () => Redirect("FindingHelp");
+    const onPressInformation = () => Redirect("Information");
+>>>>>>> Stashed changes
 
 const navigation = useNavigation();
 function Redirect(value) {
@@ -67,8 +79,12 @@ export default class Main extends React.Component {
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
+<<<<<<< Updated upstream
         )
     }
+=======
+    );
+>>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({

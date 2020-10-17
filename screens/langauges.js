@@ -42,6 +42,7 @@ const ButtonPress = (item) => {
     navigation.navigate("Main");
 };
 
+<<<<<<< Updated upstream
 export default class Languages extends React.Component {
     render(){
         return (
@@ -64,6 +65,27 @@ export default class Languages extends React.Component {
             </SafeAreaView>
         );
     }
+=======
+    return (
+        <SafeAreaView style={styles.container}>
+            <View style={styles.tableContainer}>
+                <FlatGrid
+                    itemDimension={130}
+                    data={languages}
+                    renderItem={({ item, index }) => (
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => ButtonPress({item})}
+                        >
+                            <Text style={styles.text}>{item}</Text>
+                        </TouchableOpacity>
+                    )}
+                />
+            </View>
+            <StatusBar style="auto" />
+        </SafeAreaView>
+    );
+>>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({

@@ -9,18 +9,20 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function App() {
-    const navigation = useNavigation();
-    function Redirect(value) {
-        navigation.navigate(value);
-    }
-    const onPressHumanTrafficking = () => Redirect("HumanTrafficking");
-    const onPressStayingSafe = () => Redirect("StayingSafe");
-    const onPressFindingHelp = () => Redirect("FindingHelp");
-    const onPressInformation = () => Redirect("Information");
 
-    return (
-        <SafeAreaView style={styles.container}>
+const navigation = useNavigation();
+function Redirect(value) {
+    navigation.navigate(value);
+}
+const onPressHumanTrafficking = () => Redirect("HumanTrafficking");
+const onPressStayingSafe = () => Redirect("StayingSafe");
+const onPressFindingHelp = () => Redirect("FindingHelp");
+const onPressInformation = () => Redirect("Information");
+
+export default class Main extends React.Component {
+    render(){
+        return(
+            <SafeAreaView style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>Staying Safe</Text>
             </View>
@@ -65,7 +67,8 @@ export default function App() {
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
-    );
+        )
+    }
 }
 
 const styles = StyleSheet.create({

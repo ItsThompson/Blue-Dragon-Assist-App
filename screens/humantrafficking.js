@@ -5,30 +5,29 @@ import {
     Text,
     View,
     SafeAreaView,
-    Image,
-    Button,
-    Alert,
 } from "react-native";
 
-export default function App() {
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.spacer}></View>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Staying Safe</Text>
-            </View>
-            <View style={styles.paragraphContainer}>
-                <Text style={styles.paragraph}>
-                    Trafficking in persons is when men, women, or children are
-                    deceived, coerced or sold, domestically and abroad, into
-                    "slave-like" situations contrary to their desires, including
-                    sexual exploitation, forced labor, victim's body parts,
-                    forced marriage and other inhumane purposes.
-                </Text>
-            </View>
-            <View style={styles.horizontalLine}></View>
-        </SafeAreaView>
-    );
+export default class HumanTrafficking extends React.Component {
+    render(){
+        return (
+            <SafeAreaView style={styles.container}>
+                <View style={styles.spacer}></View>
+                <View style={styles.titleContainer}>
+                    <Text style={styles.title}>Staying Safe</Text>
+                </View>
+                <View style={styles.paragraphContainer}>
+                    <Text style={styles.paragraph}>
+                        Trafficking in persons is when men, women, or children are
+                        deceived, coerced or sold, domestically and abroad, into
+                        "slave-like" situations contrary to their desires, including
+                        sexual exploitation, forced labor, victim's body parts,
+                        forced marriage and other inhumane purposes.
+                    </Text>
+                </View>
+                <View style={styles.horizontalLine}></View>
+            </SafeAreaView>
+        )
+    }
 }
 
 const styles = StyleSheet.create({

@@ -9,15 +9,14 @@ import {
     Button,
     Dimensions,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
-var width = Dimensions.get("window").width;
-var height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
 
-export default function App() {
-    const navigation = useNavigation();
-    return (
-        <SafeAreaView style={styles.container}>
+export default class Home extends React.Component {
+    render(){
+        return(
+            <SafeAreaView style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>Staying Safe</Text>
             </View>
@@ -47,9 +46,9 @@ export default function App() {
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
-    );
+        )
+    }
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

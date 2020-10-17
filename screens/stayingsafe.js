@@ -10,21 +10,23 @@ import {
     Alert,
 } from "react-native";
 
-export default function App() {
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Staying Safe</Text>
-            </View>
-            <View style={styles.image}>
-                <Image source={require("../assets/icon.png")} />
-            </View>
-            <View style={styles.button}>
-                <Button title="Enter" onPress={() => Alert.alert("TODO")} />
-            </View>
-            <StatusBar style="auto" />
-        </SafeAreaView>
-    );
+export default class StayingSafe extends React.Component {
+    render(){
+        return (
+            <SafeAreaView style={styles.container}>
+                <View style={styles.titleContainer}>
+                    <Text style={styles.title}>Staying Safe</Text>
+                </View>
+                <View style={styles.image}>
+                    <Image source={require("../assets/icon.png")} />
+                </View>
+                <View style={styles.button}>
+                    <Button title="Enter" onPress={() => Alert.alert("TODO")} />
+                </View>
+                <StatusBar style="auto" />
+            </SafeAreaView>
+        );
+    }
 }
 
 const styles = StyleSheet.create({

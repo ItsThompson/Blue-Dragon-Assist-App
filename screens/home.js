@@ -11,10 +11,10 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-var width = Dimensions.get("window").width;
-var height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
 
-export default function App() {
+function App() {
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
@@ -49,7 +49,13 @@ export default function App() {
         </SafeAreaView>
     );
 }
-
+export default class Home extends React.Component {
+    render(){
+        return(
+            <App/>
+        )
+    }
+}
 const styles = StyleSheet.create({
     container: {
         flex: 1,

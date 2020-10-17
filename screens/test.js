@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-import { View, Text} from "react-native";
-
-// https://reactnative.dev/docs/network
-export default class Test extends React.Component {
-    render(){
-        return(
-            <View>
-                <Text>
-                    yo
-                </Text>
-            </View>
-        )
-=======
 import React, { useState } from "react";
 import * as firebase from 'firebase';
 import { StyleSheet, View, Image, Dimensions} from "react-native";
@@ -61,6 +47,5 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
         height: height * 0.4,
         width: width * 0.8,
->>>>>>> Stashed changes
     }
 })

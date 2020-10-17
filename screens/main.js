@@ -79,12 +79,7 @@ export default class Main extends React.Component {
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
-<<<<<<< Updated upstream
-        )
-    }
-=======
     );
->>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({

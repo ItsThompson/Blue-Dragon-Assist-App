@@ -3,20 +3,6 @@ import { ScrollView, Text, StyleSheet } from "react-native";
 import UnorderedList from "react-native-unordered-list";
 import { Card, Divider } from "react-native-elements";
 
-<<<<<<< Updated upstream
-export default class Information extends React.Component {
-    render() {
-        return (
-            <ScrollView style={styles.container}>
-                <Text style={styles.title}>Key Statistics</Text>
-                <Divider
-                    style={{ height: 2, backgroundColor: "#61BB9B" }}
-                ></Divider>
-                <Card>
-                    <Card.Title style={styles.label}>
-                        What is Human Trafficking
-                    </Card.Title>
-=======
 export default function App() {
     return (
         <ScrollView style={styles.container}>
@@ -72,7 +58,6 @@ export default function App() {
                 </UnorderedList>
                 <Text>{"\n"}</Text>
                 <UnorderedList>
->>>>>>> Stashed changes
                     <Text style={styles.text}>
                         Trafficking in persons is the act of recruiting,
                         harboring, transporting, providing, or obtaining a

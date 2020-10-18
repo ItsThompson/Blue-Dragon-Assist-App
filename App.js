@@ -1,5 +1,4 @@
 import React from "react";
-import * as firebase from 'firebase';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./screens/home";
@@ -14,19 +13,6 @@ import Test from "./screens/test";
 import Vietnamese from "./screens/vietnamese";
 
 const Stack = createStackNavigator();
-
-const firebaseConfig = {
-    apiKey: "AIzaSyANsBgqpzsRfwNXtmyvngaguAjgxkOz_ZY",
-    authDomain: "blue-dragon-app.firebaseapp.com",
-    databaseURL: "https://blue-dragon-app.firebaseio.com",
-    projectId: "blue-dragon-app",
-    storageBucket: "blue-dragon-app.appspot.com",
-    messagingSenderId: "322576600070",
-    appId: "1:322576600070:web:92473c995dbe29821b4787",
-    measurementId: "G-CNBJSYCXEM"
-}
-
-firebase.initializeApp(firebaseConfig);
 
 export default function App() {
     createHomeStack = () => (

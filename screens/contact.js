@@ -21,33 +21,19 @@ export default function App() {
                     >
                         https://www.bluedragon.org/
                     </Text>
-                </Card>
-                <Card>
-                    <Card.Title style={styles.label}>Our Email</Card.Title>
-                    <Text style={styles.text}>
-                        <Text
-                            style={{ color: "blue" }}
-                            onPress={() =>
-                                Linking.openURL("mailto:info@bdcf.org")
-                            }
-                        >
-                            info@bdcf.org
-                        </Text>
+                </Text>
+            </Card>
+            <Card>
+                <Card.Title style={styles.label}>Our Email</Card.Title>
+                <Text style={styles.text}>
+                    <Text
+                        style={{ color: "blue" }}
+                        onPress={() =>
+                            Linking.openURL("mailto:info@bdcf.org")
+                        }
+                    >
+                        info@bdcf.org
                     </Text>
-<<<<<<< Updated upstream
-                </Card>
-                <Card>
-                    <Card.Title style={styles.label}>
-                        Head Office Number
-                    </Card.Title>
-                    <Text style={styles.text}>
-                        <Text>+84 24 3717 0544</Text>
-                    </Text>
-                </Card>
-            </ScrollView>
-        );
-    }
-=======
                 </Text>
             </Card>
             <Card>
@@ -60,7 +46,6 @@ export default function App() {
             </Card>
         </ScrollView>
     );
->>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({

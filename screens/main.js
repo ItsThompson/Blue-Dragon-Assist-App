@@ -9,8 +9,6 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-<<<<<<< Updated upstream
-=======
 export default function App() {
     const navigation = useNavigation();
     function Redirect(value) {
@@ -20,21 +18,9 @@ export default function App() {
     const onPressStayingSafe = () => Redirect("StayingSafe");
     const onPressFindingHelp = () => Redirect("FindingHelp");
     const onPressInformation = () => Redirect("Information");
->>>>>>> Stashed changes
 
-const navigation = useNavigation();
-function Redirect(value) {
-    navigation.navigate(value);
-}
-const onPressHumanTrafficking = () => Redirect("HumanTrafficking");
-const onPressStayingSafe = () => Redirect("StayingSafe");
-const onPressFindingHelp = () => Redirect("FindingHelp");
-const onPressInformation = () => Redirect("Information");
-
-export default class Main extends React.Component {
-    render(){
-        return(
-            <SafeAreaView style={styles.container}>
+    return (
+        <SafeAreaView style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>Staying Safe</Text>
             </View>

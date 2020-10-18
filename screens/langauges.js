@@ -10,62 +10,38 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { FlatGrid } from "react-native-super-grid";
 
+export default function App() {
+    const navigation = useNavigation();
+    const languages = [
+        "🇬🇧 English",
+        "🇫🇷 French",
+        "🇻🇳 Vietnamese",
+        "🏳️ Language",
+        "🏳️ Language",
+        "🏳️ Language",
+    ];
 
-const navigation = useNavigation();
-const languages = [
-    "🇬🇧 English",
-    "🇫🇷 French",
-    "🇻🇳 Vietnamese",
-    "🏳️ Language",
-    "🏳️ Language",
-    "🏳️ Language",
-];
+    const ButtonPress = (item) => {
+        switch(item){
+            case languages[0]: {
+                // English
+                navigation.navigate("Main");
+                break;
+            }
+            case languages[1]: {
+                // French
+                navigation.navigate("Main");
+                break;
+            }
+            case languages[2]: {
+                // French
+                navigation.navigate("Vietnamese");
+                break;
+            }
+        }
+        navigation.navigate("Main");
+    };
 
-const ButtonPress = (item) => {
-    switch(item){
-        case languages[0]: {
-            // English
-            navigation.navigate("Main");
-            break;
-        }
-        case languages[1]: {
-            // French
-            navigation.navigate("Main");
-            break;
-        }
-        case languages[2]: {
-            // French
-            navigation.navigate("Vietnamese");
-            break;
-        }
-    }
-    navigation.navigate("Main");
-};
-
-<<<<<<< Updated upstream
-export default class Languages extends React.Component {
-    render(){
-        return (
-            <SafeAreaView style={styles.container}>
-                <View style={styles.tableContainer}>
-                    <FlatGrid
-                        itemDimension={130}
-                        data={languages}
-                        renderItem={({ item, index }) => (
-                            <TouchableOpacity
-                                style={styles.button}
-                                onPress={ButtonPress({item})}
-                            >
-                                <Text style={styles.text}>{item}</Text>
-                            </TouchableOpacity>
-                        )}
-                    />
-                </View>
-                <StatusBar style="auto" />
-            </SafeAreaView>
-        );
-    }
-=======
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.tableContainer}>
@@ -75,7 +51,7 @@ export default class Languages extends React.Component {
                     renderItem={({ item, index }) => (
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={() => ButtonPress({item})}
+                            onPress={ButtonPress({item})}
                         >
                             <Text style={styles.text}>{item}</Text>
                         </TouchableOpacity>
@@ -85,7 +61,6 @@ export default class Languages extends React.Component {
             <StatusBar style="auto" />
         </SafeAreaView>
     );
->>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({

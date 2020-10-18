@@ -59,77 +59,23 @@ export default function App() {
                 <Text>{"\n"}</Text>
                 <UnorderedList>
                     <Text style={styles.text}>
-                        Trafficking in persons is the act of recruiting,
-                        harboring, transporting, providing, or obtaining a
-                        person for compelled labor or commercial sex acts
-                        through the use of force, fraud or coercion.
+                        Trafficked to countries and regions outside of the
+                        GMS including Macau, Hong Kong, Japan, and Europe
+                        mainly for sexual exploitation.
                     </Text>
+                </UnorderedList>
+                <Text>{"\n"}</Text>
+                <UnorderedList>
                     <Text style={styles.text}>
-                        {"\n"}An estimated{" "}
-                        <Text style={{ fontWeight: "bold" }}>
-                            40.3 million men
-                        </Text>
-                        , women and children are trapped in situations which
-                        they were coerced or deceived into and which they cannot
-                        leave.
+                        Internal trafficking is prevalent in most provinces
+                        in Vietnam for the purpose of labor exploitation and
+                        sexual exploitation.
                     </Text>
-<<<<<<< Updated upstream
-                </Card>
-                <Card>
-                    <Card.Title style={styles.label}>
-                        5 Most Common Trends of Human Trafficking in Vietnam{" "}
-                    </Card.Title>
-                    <UnorderedList>
-                        <Text style={styles.text}>
-                            Trafficked from Northern Vietnam into China for
-                            forced marriage, sexual exploitation, or labor
-                            exploitation.
-                        </Text>
-                    </UnorderedList>
-                    <Text>{"\n"}</Text>
-                    <UnorderedList>
-                        <Text style={styles.text}>
-                            Trafficked from Southern Vietnam to Cambodia,
-                            Malaysia, Laos PDR, or Thailand for sexual
-                            exploitation.
-                        </Text>
-                    </UnorderedList>
-                    <Text>{"\n"}</Text>
-                    <UnorderedList>
-                        <Text style={styles.text}>
-                            Lured into arranged marriages in Taiwan, South
-                            Korea, Singapore, and Malaysia.
-                        </Text>
-                    </UnorderedList>
-                    <Text>{"\n"}</Text>
-                    <UnorderedList>
-                        <Text style={styles.text}>
-                            Trafficked to countries and regions outside of the
-                            GMS including Macau, Hong Kong, Japan, and Europe
-                            mainly for sexual exploitation.
-                        </Text>
-                    </UnorderedList>
-                    <Text>{"\n"}</Text>
-                    <UnorderedList>
-                        <Text style={styles.text}>
-                            Internal trafficking is prevalent in most provinces
-                            in Vietnam for the purpose of labor exploitation and
-                            sexual exploitation.
-                        </Text>
-                    </UnorderedList>
-                </Card>
-            </ScrollView>
-        );
-    }
-}
-
-=======
                 </UnorderedList>
             </Card>
         </ScrollView>
     );
 }
->>>>>>> Stashed changes
 const styles = StyleSheet.create({
     container: {
         flex: 1,

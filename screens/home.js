@@ -1,3 +1,4 @@
+
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
@@ -9,6 +10,7 @@ import {
     Button,
     Dimensions,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -46,15 +48,9 @@ export default function App() {
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
-<<<<<<< Updated upstream
-        )
-    }
-}
-=======
     );
 }
 
->>>>>>> Stashed changes
 const styles = StyleSheet.create({
     container: {
         flex: 1,

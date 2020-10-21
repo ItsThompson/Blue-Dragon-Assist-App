@@ -22,6 +22,8 @@ const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 export default function App() {
+
+    
     const [state, setState] = useState([]);
     let storageRef = firebase.storage().ref();
     let imageRef = storageRef.child('vard 0.000 seconds.png');

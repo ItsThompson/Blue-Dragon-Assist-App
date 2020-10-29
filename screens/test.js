@@ -1,22 +1,5 @@
 import React, { useState } from "react";
-import * as firebase from 'firebase';
 import { StyleSheet, View, Image, Dimensions} from "react-native";
-
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyANsBgqpzsRfwNXtmyvngaguAjgxkOz_ZY",
-    authDomain: "blue-dragon-app.firebaseapp.com",
-    databaseURL: "https://blue-dragon-app.firebaseio.com",
-    projectId: "blue-dragon-app",
-    storageBucket: "blue-dragon-app.appspot.com",
-    messagingSenderId: "322576600070",
-    appId: "1:322576600070:web:92473c995dbe29821b4787",
-    measurementId: "G-CNBJSYCXEM"
-}
-
-firebase.initializeApp(firebaseConfig);
-
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;

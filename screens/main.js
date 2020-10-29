@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function App() {
+function App() {
     const navigation = useNavigation();
     function Redirect(value) {
         navigation.navigate(value);
@@ -67,7 +67,13 @@ export default function App() {
         </SafeAreaView>
     );
 }
-
+export default class Main extends React.Component {
+    render(){
+        return(
+            <App/>
+        )
+    }
+}
 const styles = StyleSheet.create({
     titleContainer: { padding: 10 },
     title: {

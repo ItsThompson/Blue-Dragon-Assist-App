@@ -15,7 +15,7 @@ export default function App() {
         <SafeAreaView style={styles.container}>
             <View style={styles.spacer}></View>
             <View style={styles.titleContainer}>
-                <Text style={styles.title}>Staying Safe</Text>
+                <Text style={styles.title}>Human Trafficking</Text>
             </View>
             <View style={styles.paragraphContainer}>
                 <Text style={styles.paragraph}>
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: "bold",
+        textAlign: "center",
         fontSize: 48,
         letterSpacing: 2,
     },

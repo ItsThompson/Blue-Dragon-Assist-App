@@ -21,25 +21,24 @@ export default function App() {
         "🏳️ Language",
     ];
 
-    const ButtonPress = (item) => {
-        switch(item){
-            case languages[0]: {
+    const ButtonPress = (index) => {
+        switch(index["index"]){
+            case 0: {
                 // English
                 navigation.navigate("Main");
                 break;
             }
-            case languages[1]: {
+            case 1: {
                 // French
                 navigation.navigate("Main");
                 break;
             }
-            case languages[2]: {
+            case 2: {
                 // French
                 navigation.navigate("Vietnamese");
                 break;
             }
         }
-        navigation.navigate("Main");
     };
 
     return (
@@ -51,7 +50,7 @@ export default function App() {
                     renderItem={({ item, index }) => (
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={ButtonPress({item})}
+                            onPress={() => ButtonPress({index})}
                         >
                             <Text style={styles.text}>{item}</Text>
                         </TouchableOpacity>

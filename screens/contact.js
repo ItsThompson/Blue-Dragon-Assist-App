@@ -2,7 +2,7 @@ import * as React from "react";
 import { ScrollView, Text, StyleSheet, Linking } from "react-native";
 import { Card, Divider } from "react-native-elements";
 
-function App() {
+export default function App() {
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.title}>Contact Us</Text>
@@ -46,14 +46,6 @@ function App() {
             </Card>
         </ScrollView>
     );
-}
-
-export default class Contact extends React.Component {
-    render(){
-        return(
-            <App/>
-        )
-    }
 }
 
 const styles = StyleSheet.create({

@@ -3,7 +3,7 @@ import { ScrollView, Text, StyleSheet } from "react-native";
 import UnorderedList from "react-native-unordered-list";
 import { Card, Divider } from "react-native-elements";
 
-function App() {
+export default function App() {
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.title}>Key Statistics</Text>
@@ -75,13 +75,6 @@ function App() {
             </Card>
         </ScrollView>
     );
-}
-export default class Information extends React.Component {
-    render(){
-        return(
-            <App/>
-        )
-    }
 }
 const styles = StyleSheet.create({
     container: {

@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Dimensions, Text} from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import {decode, encode} from 'base-64'
+
+const textsByLanguageAndTitle = require("../services/textsByLanguagesAndTitle")
 
 if (!global.btoa) {  global.btoa = encode }
 
 if (!global.atob) { global.atob = decode }
 
-
-
-const textsByLanguageAndTitle = require("../services/textsByLanguagesAndTitle")
-
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-export default function App() {
-    let test;
-    textsByLanguageAndTitle("english", "test").then((data) => {
-        console.log(data);
-        test = data[0];
+function Info(){
+    return new Promise((resolve) => {
+        textsByLanguageAndTitle("english", "test").then((data) => {
+            console.log(data);
+            let test = data[0];
+            resolve(test);
+            return;
+        })
     })
+}
+
+export default function App() {
+    const test = Info();
     return(
         <Text>{test}</Text>
     )

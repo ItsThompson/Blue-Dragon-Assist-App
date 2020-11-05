@@ -13,7 +13,7 @@ const textsByLanguageAndTitle = async(language, title) => {
     const doc = await client.query(
         Paginate(
             Match(
-                Index('test'), language, title
+                Index('texts_by_language_and_title'), language, title
             )
         )
         // Paginate(

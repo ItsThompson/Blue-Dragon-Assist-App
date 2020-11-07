@@ -1,40 +1,18 @@
 {
-    "main": "node_modules/expo/AppEntry.js",
-    "scripts": {
-        "start": "expo start",
-        "android": "expo start --android",
-        "ios": "expo start --ios",
-        "web": "expo start --web",
-        "eject": "expo eject"
-    },
-    "dependencies": {
-        "@react-native-community/masked-view": "^0.1.10",
-        "@react-navigation/native": "^5.7.3",
-        "@react-navigation/stack": "^5.9.0",
-        "axios": "^0.20.0",
-        "btoa": "^1.2.1",
-        "expo": "^38.0.2",
-        "expo-status-bar": "^1.0.2",
-        "faunadb": "^3.0.1",
-        "net": "^1.0.2",
-        "node-fetch": "^2.6.1",
-        "node-libs-react-native": "^1.2.0",
-        "react": "~16.11.0",
-        "react-dom": "~16.11.0",
-        "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-        "react-native-elements": "^2.3.2",
-        "react-native-gesture-handler": "~1.6.0",
-        "react-native-reanimated": "~1.9.0",
-        "react-native-screens": "~2.9.0",
-        "react-native-super-grid": "^4.0.3",
-        "react-native-unordered-list": "^1.0.4",
-        "react-native-web": "~0.11.7",
-        "react-navigation-stack": "^2.8.2",
-        "util": "^0.12.3"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.8.6",
-        "babel-preset-expo": "~8.1.0"
-    },
-    "private": true
+  "name": "applicationserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "filereader": "^0.10.3",
+    "image-to-base64": "^2.1.0",
+    "mediaserver": "^0.1.1"
+  }
 }

@@ -1,36 +1,50 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./screens/home";
-import Information from "./screens/information";
-import Languages from "./screens/langauges";
-import Contact from "./screens/contact";
-import HumanTrafficking from "./screens/humantrafficking";
-import StayingSafe from "./screens/stayingsafe";
-import FindingHelp from "./screens/findinghelp";
-import Main from "./screens/main";
-import Test from "./screens/test";
-import Vietnamese from "./screens/vietnamese";
+const express = require("express");
+const app = express();
+const imageToBase64 = require("image-to-base64");
+var ms = require("mediaserver");
 
-const Stack = createStackNavigator();
+var PORT = process.env.PORT || "3000";
 
-export default function App() {
-    createHomeStack = () => (
-        <Stack.Navigator>
-            <Stack.Screen name='Home' component={Home} />
-            <Stack.Screen name='Main' component={Main} />
-            <Stack.Screen name='Test' component={Test} />
-            <Stack.Screen name='Information' component={Information} />
-            <Stack.Screen name='Contact' component={Contact} />
-            <Stack.Screen name='Languages' component={Languages} />
-            <Stack.Screen name='Vietnamese' component={Vietnamese} />
-            <Stack.Screen
-                name='HumanTrafficking'
-                component={HumanTrafficking}
-            />
-            <Stack.Screen name='StayingSafe' component={StayingSafe} />
-            <Stack.Screen name='FindingHelp' component={FindingHelp} />
-        </Stack.Navigator>
-    );
-    return <NavigationContainer>{this.createHomeStack()}</NavigationContainer>;
-}
+app.listen(PORT, function(){
+    console.log("Server started");
+})
+
+app.get("/homepage/:language", function(req, res){
+    if(req.params.language == "english"){
+        res.json(
+            [
+                {
+                    "id": 1,
+                    "title": "english",
+                    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ]
+        );
+    }
+})
+
+app.get("/homepage/:language/:image", function(req, res){
+    if(req.params.image){
+        imageToBase64("./smiley.jpg")
+        .then((response) => {
+            res.json({
+                Image: response
+            });
+        })
+    }
+})
+
+app.get("/audio", function(req, res){
+    console.log(ms.mediaTypes);
+    ms.pipe(req, res, "audio.mp3");
+})
+
+app.get("/video", function(req, res){
+    ms.pipe(req, res, "video.mp4", "video/mpeg");
+})
+
+
+
+
+
+//make audio, video requests separate, only one at a time.

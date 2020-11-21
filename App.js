@@ -11,6 +11,7 @@ import FindingHelp from "./screens/findinghelp";
 import Main from "./screens/main";
 import Test from "./screens/test";
 import Vietnamese from "./screens/vietnamese";
+import Quiz from "./screens/quiz";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ export default function App() {
             />
             <Stack.Screen name='StayingSafe' component={StayingSafe} />
             <Stack.Screen name='FindingHelp' component={FindingHelp} />
+            <Stack.Screen name='Quiz' component={Quiz} />
         </Stack.Navigator>
     );
     return <NavigationContainer>{this.createHomeStack()}</NavigationContainer>;

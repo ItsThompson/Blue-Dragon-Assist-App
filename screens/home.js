@@ -36,6 +36,12 @@ function App() {
             </View>
             <View style={styles.button}>
                 <Button
+                    title="Quiz"
+                    onPress={() => navigation.navigate("Quiz")}
+                ></Button>
+            </View>
+            <View style={styles.button}>
+                <Button
                     title="Information"
                     onPress={() => navigation.navigate("Languages")}
                 ></Button>

@@ -6,6 +6,7 @@ import {
 import Questions from "../components/questions"
 
 export default function App() {
+    // Need to work on questions ui
     return(
         <Questions/>
     )

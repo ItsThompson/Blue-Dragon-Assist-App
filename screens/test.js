@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Text, FlatList, ActivityIndicator, View } from "react-native";
 import {decode, encode} from 'base-64';
+import {lang} from '../chosenlanguage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const textsByLanguageAndTitle = require("../services/textsByLanguagesAndTitle")
 
@@ -13,7 +16,8 @@ export default function App() {
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        textsByLanguageAndTitle("english", "test")
+        asyncstornpm
+        textsByLanguageAndTitle(lang, "test")
             .then((output) => {
                 console.log('test.js');
                 console.log(output);

@@ -12,6 +12,7 @@ if (!global.btoa) {  global.btoa = encode }
 if (!global.atob) { global.atob = decode }
 
 export default function App() {
+    // Work in progress: Asyncstorage
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     

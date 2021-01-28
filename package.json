@@ -15,6 +15,7 @@
     "axios": "^0.20.0",
     "btoa": "^1.2.1",
     "expo": "^39.0.0",
+    "expo-clipboard": "^1.0.1",
     "expo-status-bar": "~1.0.2",
     "faunadb": "^3.0.1",
     "net": "^1.0.2",
@@ -31,7 +32,8 @@
     "react-native-unordered-list": "^1.0.4",
     "react-native-web": "~0.13.7",
     "react-navigation-stack": "^2.8.2",
-    "util": "^0.12.3"
+    "util": "^0.12.3",
+    "expo-av": "~8.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

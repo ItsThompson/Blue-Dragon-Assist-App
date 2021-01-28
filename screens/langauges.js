@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FlatGrid } from "react-native-super-grid";
+import { setLanguage } from "../chosenlanguage";
+import { Alert } from "react-native";
 
 export default function App() {
     const navigation = useNavigation();
@@ -22,19 +24,23 @@ export default function App() {
     ];
 
     const ButtonPress = (index) => {
-        switch(index["index"]){
+        switch (index["index"]) {
             case 0: {
                 // English
-                navigation.navigate("Main");
+                navigation.navigate("Home");
+                setLanguage("english");
+                Alert.alert("Saved Changes");
                 break;
             }
             case 1: {
                 // French
-                navigation.navigate("Main");
+                navigation.navigate("Home");
+                setLanguage("latin");
+                Alert.alert("Saved Changes");
                 break;
             }
             case 2: {
-                // French
+                // Vietnamese
                 navigation.navigate("Vietnamese");
                 break;
             }
@@ -50,7 +56,9 @@ export default function App() {
                     renderItem={({ item, index }) => (
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={() => ButtonPress({index})}
+                            onPress={() => {
+                                ButtonPress({ index });
+                            }}
                         >
                             <Text style={styles.text}>{item}</Text>
                         </TouchableOpacity>

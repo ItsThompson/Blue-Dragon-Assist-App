@@ -1,6 +1,8 @@
 import * as React from "react";
 import { ScrollView, Text, StyleSheet, Linking } from "react-native";
 import { Card, Divider } from "react-native-elements";
+import Clipboard from "expo-clipboard";
+import { Alert } from "react-native";
 
 export default function App() {
     return (
@@ -28,20 +30,23 @@ export default function App() {
                 <Text style={styles.text}>
                     <Text
                         style={{ color: "blue" }}
-                        onPress={() =>
-                            Linking.openURL("mailto:info@bdcf.org")
-                        }
+                        onPress={() => Linking.openURL("mailto:info@bdcf.org")}
                     >
                         info@bdcf.org
                     </Text>
                 </Text>
             </Card>
             <Card>
-                <Card.Title style={styles.label}>
-                    Head Office Number
-                </Card.Title>
+                <Card.Title style={styles.label}>Head Office Number</Card.Title>
                 <Text style={styles.text}>
-                    <Text>+84 24 3717 0544</Text>
+                    <Text
+                        onPress={() => {
+                            Clipboard.setString("+84 24 3717 0544");
+                            Alert.alert("Copied to clipboard");
+                        }}
+                    >
+                        +84 24 3717 0544
+                    </Text>
                 </Text>
             </Card>
         </ScrollView>

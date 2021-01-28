@@ -1,4 +1,3 @@
-
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
@@ -11,12 +10,22 @@ import {
     Dimensions,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { lang } from "../chosenlanguage";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 function App() {
     const navigation = useNavigation();
+
+    const Information = () => {
+        if (lang !== null) {
+            navigation.navigate("Main");
+        } else {
+            navigation.navigate("Languages");
+        }
+    };
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.titleContainer}>
@@ -37,7 +46,7 @@ function App() {
             <View style={styles.button}>
                 <Button
                     title="Information"
-                    onPress={() => navigation.navigate("Languages")}
+                    onPress={() => Information()}
                 ></Button>
             </View>
             <View style={styles.button}>
@@ -46,15 +55,19 @@ function App() {
                     onPress={() => navigation.navigate("Contact")}
                 />
             </View>
+            <View style={styles.button}>
+                <Button
+                    title="Switch Languages"
+                    onPress={() => navigation.navigate("Languages")}
+                ></Button>
+            </View>
             <StatusBar style="auto" />
         </SafeAreaView>
     );
 }
 export default class Home extends React.Component {
-    render(){
-        return(
-            <App/>
-        )
+    render() {
+        return <App />;
     }
 }
 const styles = StyleSheet.create({

@@ -10,6 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { FlatGrid } from "react-native-super-grid";
 import { setLanguage } from "../chosenlanguage";
+import { Alert } from "react-native";
 
 export default function App() {
     const navigation = useNavigation();
@@ -23,35 +24,41 @@ export default function App() {
     ];
 
     const ButtonPress = (index) => {
-        switch(index["index"]){
+        switch (index["index"]) {
             case 0: {
-                navigation.navigate("Main");
-                setLanguage("latin");
+                navigation.navigate("Home");
+                Alert.alert("Saved Changes");
+                setLanguage("vietnamese");
                 break;
             }
             case 1: {
-                navigation.navigate("Main");
-                setLanguage("latin")
+                navigation.navigate("Home");
+                Alert.alert("Saved Changes");
+                setLanguage("vietnamese");
                 break;
             }
             case 2: {
-                navigation.navigate("Main");
-                setLanguage("latin")
+                navigation.navigate("Home");
+                Alert.alert("Saved Changes");
+                setLanguage("vietnamese");
                 break;
             }
             case 3: {
-                navigation.navigate("Main");
-                setLanguage("latin")
+                navigation.navigate("Home");
+                Alert.alert("Saved Changes");
+                setLanguage("vietnamese");
                 break;
             }
             case 4: {
-                navigation.navigate("Main");
-                setLanguage("latin")
+                navigation.navigate("Home");
+                Alert.alert("Saved Changes");
+                setLanguage("vietnamese");
                 break;
             }
             case 5: {
-                navigation.navigate("Main");
-                setLanguage("latin")
+                navigation.navigate("Home");
+                Alert.alert("Saved Changes");
+                setLanguage("vietnamese");
                 break;
             }
         }
@@ -66,7 +73,7 @@ export default function App() {
                     renderItem={({ item, index }) => (
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={() => ButtonPress({index})}
+                            onPress={() => ButtonPress({ index })}
                         >
                             <Text style={styles.text}>{item}</Text>
                         </TouchableOpacity>

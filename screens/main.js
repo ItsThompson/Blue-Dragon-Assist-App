@@ -68,10 +68,8 @@ function App() {
     );
 }
 export default class Main extends React.Component {
-    render(){
-        return(
-            <App/>
-        )
+    render() {
+        return <App />;
     }
 }
 const styles = StyleSheet.create({
@@ -84,7 +82,7 @@ const styles = StyleSheet.create({
     horizontalLine: {
         padding: 10,
         borderBottomColor: "black",
-        borderBottomWidth: 1,
+        borderBottomWidth: 3,
         alignSelf: "stretch",
     },
     paragraphContainer: {

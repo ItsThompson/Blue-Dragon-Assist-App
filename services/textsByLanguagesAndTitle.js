@@ -1,4 +1,5 @@
 const faunadb = require('faunadb');
+//TODO: WE ARE LEAKING THE CLIENT SECRET HERE
 const client = new faunadb.Client({secret : 'fnAD5UwXOJACDCQF7orPKwdZsb2gOr46bgD3Pp_l'});
 
 const {
@@ -16,11 +17,6 @@ const textsByLanguageAndTitle = async(language, title) => {
                 Index('texts_by_language_and_title'), language, title
             )
         )
-        // Paginate(
-        //     Match(
-        //         Index('texts_by_language_and_title'), language, title
-        //     )
-        // )
     )
     .catch((error) => console.error(error));
     let out = [

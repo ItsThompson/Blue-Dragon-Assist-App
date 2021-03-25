@@ -1,5 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
 import {
     StyleSheet,
     Text,
@@ -8,25 +7,65 @@ import {
     Image,
     Button,
     Alert,
+    ActivityIndicator,
 } from "react-native";
+import React, { useEffect, useState } from "react";
+import { lang } from "../chosenlanguage";
+const textsByLanguageAndTitle = require("../services/textsByLanguagesAndTitle");
 
 export default function App() {
+    const [isLoading, setLoading] = useState(true);
+    let chosenLanguage = lang;
+    const [title, setTitle] = useState("undefined");
+    const [paragraph, setParagraph] = useState("undefined");
+
+    useEffect(() => {
+        textsByLanguageAndTitle(chosenLanguage, "human_trafficking_title")
+            .then((output) => {
+                // console.log(output);
+                setTitle(String(output[0]["data"]));
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+            .finally(() => {
+                // setLoading(false);
+                console.log("Title");
+            });
+    }, []);
+    useEffect(() => {
+        textsByLanguageAndTitle(chosenLanguage, "human_trafficking_p1")
+            .then((output) => {
+                // console.log(output);
+                setParagraph(String(output[0]["data"]));
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+            .finally(() => {
+                console.log("Paragraph");
+                setLoading(false);
+            });
+    }, []);
+
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.spacer}></View>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Human Trafficking</Text>
-            </View>
-            <View style={styles.paragraphContainer}>
-                <Text style={styles.paragraph}>
-                    Trafficking in persons is when men, women, or children are
-                    deceived, coerced or sold, domestically and abroad, into
-                    "slave-like" situations contrary to their desires, including
-                    sexual exploitation, forced labor, victim's body parts,
-                    forced marriage and other inhumane purposes.
-                </Text>
-            </View>
-            <View style={styles.horizontalLine}></View>
+            {isLoading ? (
+                <ActivityIndicator />
+            ) : (
+                <View>
+                    <View style={styles.spacer}></View>
+                    <View style={styles.titleContainer}>
+                        {/* human_trafficking_title */}
+                        <Text style={styles.title}>{title}</Text>
+                    </View>
+                    <View style={styles.paragraphContainer}>
+                        {/* human_trafficking_p1 */}
+                        <Text style={styles.paragraph}>{paragraph}</Text>
+                    </View>
+                    <View style={styles.horizontalLine}></View>
+                </View>
+            )}
         </SafeAreaView>
     );
 }

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     StyleSheet,
     Text,
@@ -8,14 +8,63 @@ import {
     Image,
     Button,
     Dimensions,
+    ActivityIndicator,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { lang } from "../chosenlanguage";
+
+const textsByLanguagesAndTitle = require("../services/textsByLanguagesAndTitle");
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 function App() {
+    let chosenLanguage = lang;
+
+    const [isLoading, setLoading] = useState(true);
+    const [information_button, setInformation] = useState("undefined");
+    const [contact_button, setContact] = useState("undefined");
+    const [languages_button, setLanguage] = useState("undefined");
+
+    useEffect(() => {
+        textsByLanguagesAndTitle(chosenLanguage, "home_information")
+            .then((output) => {
+                setInformation(String(output[0]["data"]));
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+            .finally(() => {
+                console.log("Information");
+                // setLoading(false);
+            });
+    }, []);
+    useEffect(() => {
+        textsByLanguagesAndTitle(chosenLanguage, "home_contact")
+            .then((output) => {
+                setContact(String(output[0]["data"]));
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+            .finally(() => {
+                console.log("Contact");
+                setLoading(false);
+            });
+    }, []);
+    useEffect(() => {
+        textsByLanguagesAndTitle(chosenLanguage, "home_languages")
+            .then((output) => {
+                setLanguage(String(output[0]["data"]));
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+            .finally(() => {
+                console.log("Languages");
+                setLoading(false);
+            });
+    }, []);
     const navigation = useNavigation();
 
     const Information = () => {
@@ -25,44 +74,58 @@ function App() {
             navigation.navigate("Languages");
         }
     };
+    const Contact = () => {
+        return navigation.navigate("Contact");
+    };
+    const Language = () => {
+        return navigation.navigate("Languages");
+    };
 
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Staying Safe</Text>
-            </View>
-            <View style={styles.imageContainer}>
-                <Image
-                    style={styles.image}
-                    source={require("../assets/staySafe.png")}
-                />
-            </View>
-            <View style={styles.button}>
-                <Button
-                    title="Test"
-                    onPress={() => navigation.navigate("Test")}
-                ></Button>
-            </View>
-            <View style={styles.button}>
-                <Button
-                    title="Information"
-                    onPress={() => Information()}
-                ></Button>
-            </View>
-            <View style={styles.button}>
-                <Button
-                    title="Contact"
-                    onPress={() => navigation.navigate("Contact")}
-                />
-            </View>
-            <View style={styles.button}>
-                <Button
-                    title="Switch Languages"
-                    onPress={() => navigation.navigate("Languages")}
-                ></Button>
-            </View>
-            <StatusBar style="auto" />
-        </SafeAreaView>
+        <View style={styles.container}>
+            {isLoading ? (
+                <ActivityIndicator />
+            ) : (
+                <SafeAreaView style={styles.container}>
+                    <View style={styles.titleContainer}>
+                        <Text style={styles.title}>Staying Safe</Text>
+                    </View>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            style={styles.image}
+                            source={require("../assets/staySafe.png")}
+                        />
+                    </View>
+                    <View style={styles.button}>
+                        <Button
+                            title="Test"
+                            onPress={() => navigation.navigate("Test")}
+                        ></Button>
+                    </View>
+                    <View style={styles.button}>
+                        <Button
+                            // title="Information"
+                            title={information_button}
+                            onPress={() => Information()}
+                        ></Button>
+                    </View>
+                    <View style={styles.button}>
+                        <Button
+                            // title="Contact"
+                            title={contact_button}
+                            onPress={() => Contact()}
+                        />
+                    </View>
+                    <View style={styles.button}>
+                        <Button
+                            // title="Switch Languages"
+                            title={languages_button}
+                            onPress={() => Language()}
+                        ></Button>
+                    </View>
+                </SafeAreaView>
+            )}
+        </View>
     );
 }
 export default class Home extends React.Component {
